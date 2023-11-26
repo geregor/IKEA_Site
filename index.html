@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to IKEA Global</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="media/favicon.svg" type="media/x-icon">
+        <link href="https://db.onlinewebfonts.com/c/2b9a54453c1a3cbc651c0788ade94e4a?family=Noto+IKEA+Latin+Regular" rel="stylesheet">
+        <link href="https://db.onlinewebfonts.com/c/b269e509d0e2d442240b8df6035c9999?family=Noto+IKEA+Latin+Bold" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/058e698f16.js" crossorigin="anonymous"></script>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                let item = document.getElementsByClassName("header-main__holder")[0]
+                // sessionStorage.setItem("lastYOffset",document.body.scrollTop)
+                if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+                    item.classList.add('is_active');
+                } else {
+                    item.classList.remove('is_active');
+                }
+            }
+
+            window.onload = () => {
+                var header = document.querySelector('header');
+                var headerMoving = function(direction){
+                if (direction === "up"){
+                    header.className = '';
+                } else if (direction === "down"){
+                    header.className = 'scrollDown';
+                }
+                };
+                var prevScrollTop = 0;
+                document.addEventListener("scroll", function(){
+                    if (window.screen.width > 992) {
+                        var nextScrollTop = window.pageYOffset || 0; 
+                        if (nextScrollTop > prevScrollTop){
+                            headerMoving("down");
+                        } else if (nextScrollTop < prevScrollTop){
+                            headerMoving("up");
+                        }
+                        prevScrollTop = nextScrollTop;
+                    }
+                });    
+
+                let video_buttons = document.getElementsByClassName("video-container__pause")
+                for (let i = 0; i < video_buttons.length; i++) {
+                    video_buttons[i].addEventListener("click", function() {
+                        if (!document.getElementById("video"+i).paused) {
+                            document.getElementById("video"+i).pause()
+                            video_buttons[i].childNodes[1].style = "color: #ffffff";
+                            video_buttons[i].childNodes[0].style = "color: #ffffff; display:none;";
+                        } else {
+                            document.getElementById("video"+i).play()
+                            video_buttons[i].childNodes[1].style = "color: #ffffff; display:none;";
+                            video_buttons[i].childNodes[0].style = "color: #ffffff";
+                        }
+                    })
+                }
+                document.getElementsByClassName("bi-2")[0].addEventListener("click", function() {
+                    if (!document.getElementById("video0").paused) {
+                            document.getElementById("video0").pause()
+                        } else {
+                            document.getElementById("video0").play()
+                        }
+                })
+
+                document.getElementsByClassName("vc-rectangle")[0].addEventListener("click", function() {
+                    if (!document.getElementById("video1").paused) {
+                            document.getElementById("video1").pause()
+                        } else {
+                            document.getElementById("video1").play()
+                        }
+                })
+
+                let el = document.getElementsByClassName("item-container")[0];
+                let gap = 25;
+                document.getElementsByClassName("s-left")[0].addEventListener("click", function() {
+                    if (el.style.cssText == `--m-left: -${el.offsetWidth+gap}px;`) {
+                        el.style.cssText = `--m-left: 0px;`
+                    } else if (el.style.cssText == `--m-left: -${(el.offsetWidth+gap)*2}px;`) {
+                        el.style.cssText = `--m-left: -${el.offsetWidth+gap}px;`
+                    }
+                })
+
+                document.getElementsByClassName("s-right")[0].addEventListener("click", function() {
+                    if (el.style.cssText == `--m-left: -${el.offsetWidth+gap}px;`) {
+                        el.style.cssText = `--m-left: -${(el.offsetWidth+gap)*2}px;`
+                    } else if (el.style.cssText == `--m-left: 0px;` || el.style.cssText == ``) {
+                        el.style.cssText = `--m-left: -${el.offsetWidth+gap}px;`
+                    }
+                })
+
+                function onEntry(entry) {
+                entry.forEach(change => {
+                    if (change.isIntersecting) {
+                        change.target.classList.add('el-show-anime');
+                    }
+                });
+                }
+
+                let options = {
+                    rootMargin: "200px",
+                    threshold: 0.01,
+                };
+                let observer = new IntersectionObserver(onEntry, options);
+                let elements = document.querySelectorAll('.block__1, .block__2, .block__3, .block__4, .block__5, .holder');
+
+                let windowH = window.screen.height;
+                let windowOffsetY = window.pageYOffset;
+                for (let elm of elements) {
+                    let elh = elm.clientHeight;
+                    if (((elm.offsetTop < windowOffsetY+windowH) && (elm.offsetTop > windowOffsetY)) || (elm.offsetTop <= windowOffsetY)) {
+                       
+                    } else {
+                        elm.classList.add("translateY200");
+                        observer.observe(elm);
+                    };
+                }
+                console.log("script loaded")
+            }
+        </script>
+    
+    </head>
+    <body>
+        <header>
+            <div class="container header-main">
+                <div class="flex">
+                    <a href="404.html" class="flex"><img src="media/logo.svg" alt="IKEA" class="header-main__icon"></a>
+                    <nav class="header-main__nav">
+                        <ul class="header-main__ul">
+                            <li class="ul__li__l-t-none"><a href="#" class="ul__a">Stories</a></li>
+                            <li class="ul__li__l-t-none"><a href="#" class="ul__a">Jobs</a></li>
+                            <li class="ul__li__l-t-none"><a href="#" class="ul__a">Newsroom</a></li>
+                            <li class="ul__li__l-t-none"><a href="#" class="ul__a">Our business</a></li>
+                        </ul>
+                    </nav>
+                    <a href="/404.html" class="header__bars"><i class="fa-solid fa-bars" style="color: #000000;"></i></a>
+                </div>
+                <div class="header-main__holder">
+                    <a href="404.html">
+                        <span>Go shopping: <b>IKEA International Sales</b></span>
+                        <img src="media/chevron.svg" alt="Chevron">
+                    </a>
+                    <hr>
+                    <a href="404.html" class="holder__img-container">
+                        <img class="arrow arrow-header" src="media/arrow-right.svg" alt="Arrow Rigth">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main class="container-m2 main">
+            <a href="404.html" class="block__1 is_active" >
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>Explore a colourful home filled with creative storage solutions</span>
+                    <h5 class="cbt__h5">Thinking beyond the (storage) box</h5>
+                </div>
+            </a>
+            <div class="holder">
+                <a href="404.html" class="holder__header text-container">
+                    <h5 class="holder__h5">Go shopping</h5>
+                    <img class="arrow arrow-main" src="media/arrow-right.svg" alt="Arrow Rigth">
+                </a>
+                <hr class="holder__hr">
+                <a href="404.html" class="holder__footer text-container">
+                    <span class="holder__span">Store: <b>IKEA International Sales</b></span>
+                    <img src="media/chevron.svg" alt="Chevron">
+                </a>
+            </div>
+            <a href="404.html" class="block__2 bi-1">
+                <div class="create-better-text color-black">
+                    <span>The history of a delicious icon</span>
+                    <h5 class="cbt__h5">Great moments in meatballs</h5>
+                </div>
+            </a>
+            <div href="404.html" class="block__2 bi-2">
+                <video autoplay loop preload="auto" muted width="100%" height="100%" id="video0">
+                    <source src="media/video1.mp4">
+                </video>
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>Campaigns from around the IKEA world</span>
+                    <h5 class="cbt__h5">Proudly second best</h5>
+                </div>
+                <button class="video-container__pause vc-right"><i class="fa-solid fa-pause fa-xl" style="color: #ffffff;"></i><i class="fa-solid fa-play fa-lg" style="color: #ffffff; display:none;"></i></button>
+            </div>
+            <a href="404.html" class="block__2 bi-3">
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>Family apartment in Sweden</span>
+                    <h5 class="cbt__h5">Packed with personality</h5>
+                </div>
+            </a>
+            <a href="404.html" class="block__2 bi-4">
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>Designed with artist Daren Todd</span>
+                    <h5 class="cbt__h5">A smart small space</h5>
+                </div>
+            </a>
+            <div href="404.html" class="block__3 block__3-1">
+                <div class="block-3-1__div">
+                    <span class="block-3-1__span">The 1973 IKEA catalogue</span>
+                    <h3 class="block-3-1__h3">Design<br>
+                        flashback</h3>
+                </div>
+                <div class="video-container vc-rectangle">
+                    <video autoplay loop preload="auto" muted width="100%" height="100%" id="video1">
+                        <source src="media/video2.mp4">
+                    </video>
+                    <button class="video-container__pause"><i class="fa-solid fa-pause fa-xl" style="color: #ffffff;"></i><i class="fa-solid fa-play fa-lg" style="color: #ffffff; display:none;"></i></button>
+                </div>
+            </div>
+            <a href="404.html" class="block__2 bi-6">
+                <div class="create-better-text">
+                    <span>IKEA around the world</span>
+                    <h5 class="cbt__h5">Big in Japan</h5>
+                </div>
+            </a>
+            <a href="404.html" class="block__2 bi-7">
+                <div class="create-better-text color-black">
+                    <span >IKEA around the world</span>
+                    <h5 class="cbt__h5">Olá Portugal!</h5>
+                </div>
+            </a>
+            <a href="404.html" class="block__3 block__3-2">
+                <img src="media/block__13.png" alt="Happy Woman" class="block-3__vc-square">
+                <div class="create-better-text">
+                    <span>Say hej and yum to...</span>
+                    <h5 class="cbt__h5__modern">Our new<br>plant-based<br>hot dog</h5>
+                </div>
+            </a>
+            <div class="block__4">
+                <div class="block-4__better-text">
+                    <h5 class="cbt__h5__modern mb10 mt-10">The stories <br>behind the <br>products</h5>
+                    <span class="cbt__span__modern">Democratic design dispatches straight from the <br>heart of Älmhult.</span>
+                </div>
+                <div class="items">
+                    <button class="slide s-left">
+                        <img src="media/chevron-w.svg" alt="Chevron">
+                    </button>
+                    <button class="slide s-right">
+                        <img src="media/chevron-w.svg" alt="Chevron">
+                    </button>
+                    <div class="items__container">
+                        <a href="404.html" class="item-container" style="--m-left: 0px;">
+                            <img class="item-container__img" src="media/sell_1.png" alt="FRÖSET chair">
+                            <div class="item-container__div">
+                                <span class="item-container__span">Designed by Sarah Fager and
+                                    Henrik Preutz</span>
+                                <h6 class="item-container__h6">FRÖSET chair</h6>
+                            </div>
+                        </a>
+                        <a href="404.html" class="item-container">
+                            <img class="item-container__img" src="media/sell_2.png" alt="SYMFONISK lamp">
+                            <div class="item-container__div">
+                                <span class="item-container__span">Designed by Iina Vuorivirta</span>
+                                <h6 class="item-container__h6">SYMFONISK lamp</h6>
+                            </div>
+                        </a>
+                        <a href="404.html" class="item-container">
+                            <img class="item-container__img" src="media/sell_3.png" alt="BURVIK table">
+                            <div class="item-container__div">
+                                <span class="item-container__span">Designed by Mikael Axelsson</span>
+                                <h6 class="item-container__h6">BURVIK table</h6>
+                            </div>
+                        </a>
+                        <a href="404.html" class="item-container">
+                            <img class="item-container__img" src="media/sell_4.png" alt="RÖNNINGE chair">
+                            <div class="item-container__div">
+                                <span class="item-container__span">Designed by Maja Ganszyniec</span>
+                                <h6 class="item-container__h6">RÖNNINGE chair</h6>
+                            </div>
+                        </a>
+                        <a href="404.html" class="item-container">
+                            <img class="item-container__img" src="media/sell_5.png" alt="BRÖNDEN rug">
+                            <div class="item-container__div">
+                                <span class="item-container__span">Designed by Akanksha Deo</span>
+                                <h6 class="item-container__h6">BRÖNDEN rug</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="404.html" class="block__5 bi-9">
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>Country living</span>
+                    <h5 class="cbt__h5">A visit to a Swedish farmhouse</h5>
+                </div>
+            </a>
+            <a href="404.html" class="block__2 bi-10">
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>IKEA Norway</span>
+                    <h5 class="cbt__h5">The trash collection</h5>
+                </div>
+            </a>
+            <a href="404.html" class="block__2 bi-11">
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>Student life in Sweden</span>
+                    <h5 class="cbt__h5">Starting small in the city</h5>
+                </div>
+            </a>
+            <a href="404.html" class="block__5 bi-12">
+                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <div class="create-better-text">
+                    <span>Making design dreams come true, one project at a time</span>
+                    <h5 class="cbt__h5">The extra mile</h5>
+                </div>
+            </a>
+        </main>
+        <footer>
+            <b><span class="footer__span">A world of inspiration for your home</span></b>
+            <img class="footer__logo" src="media/logo.svg" alt="IKEA">
+            <img class="footer__svg-image" src="media/footer-illustration.svg" alt="IKEA-Items">
+            <div class="footer__div">
+                <div class="footer__div-first-line">
+                    <a href="404.html">International Sales</a>
+                    <hr>
+                    <a href="404.html">Inter IKEA Group</a>
+                    <hr>
+                    <a href="404.html">IKEA Foundation</a>
+                    <hr>
+                    <a href="404.html">IKEA Museum</a>
+                    <hr>
+                    <a href="404.html">FAQs</a>
+                </div>
+                <div class="footer__div-second-line">
+                    <a href="404.html">Cookie settings</a>
+                    <span class="footer__span__align-center">© Inter IKEA Systems B.V. 1999 - 2023</span>
+                    <a href="404.html">Privacy & Cookie statement</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
