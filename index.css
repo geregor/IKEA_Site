@@ -39,47 +39,47 @@ b {
 }
 
 .bi-1 {
-    background-image: url("media/block__2.png");
+    background-image: url("media/block__2.avif");
 }
 
 .bi-2 {
-    background-image: url("media/block__3.png");
+    background-image: url("media/block__3.avif");
 }
 
 .bi-3 {
-    background-image: url("media/block__4.png");
+    background-image: url("media/block__4.avif");
 }
 
 .bi-4 {
-    background-image: url("media/block__5.png");
+    background-image: url("media/block__5.avif");
 }
 
 .bi-5 {
-    background-image: url("media/block__6.png");
+    background-image: url("media/block__6.avif");
 }
 
 .bi-6 {
-    background-image: url("media/block__7.png");
+    background-image: url("media/block__7.avif");
 }
 
 .bi-7 {
-    background-image: url("media/block__8.png");
+    background-image: url("media/block__8.avif");
 }
 
 .bi-9 {
-    background-image: url("media/block__9.png");
+    background-image: url("media/block__9.avif");
 }
 
 .bi-10 {
-    background-image: url("media/block__10.png");
+    background-image: url("media/block__10.avif");
 }
 
 .bi-11 {
-    background-image: url("media/block__11.png");
+    background-image: url("media/block__11.avif");
 }
 
 .bi-12 {
-    background-image: url("media/block__12.png");
+    background-image: url("media/block__12.avif");
 }
 
 .color-black {
@@ -144,7 +144,7 @@ body {
     display: flex;
     align-items: flex-end;
     border-radius: 8px;
-    background-image: url("media/block__1.png");
+    background-image: url("media/block__1.avif");
     background-position: 0px -146px;
     background-size: cover;
     transition: 0.3s ease-in-out;
@@ -1122,5 +1122,18 @@ footer {
     .block-404__img:nth-child(2) {
         width: 26vw;
         height: 26vw;
+    }
+
+    .holder__h5 {
+        font-size: 16px;
+    }
+
+    .holder__footer {
+        padding: 0 15px; 
+    }
+
+    .cbt__h5__modern {
+        font-size: 16px;
+        line-height: 18px;
     }
 }
