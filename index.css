@@ -308,6 +308,16 @@ body {
     line-height: 43.2px;
 }
 
+#video0 {
+    height: 100%;
+    width: 100%;
+}
+
+#video1 {
+    height: 100%;
+    width: 100%;
+}
+
 .cbt__h5__modern {
     font-size: 51px;
     line-height: 55px;
