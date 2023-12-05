@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome to IKEA Global</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="icon" href="media/favicon.svg" type="media/x-icon">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" href="img/favicon.svg" type="media/x-icon">
         <link href="https://db.onlinewebfonts.com/c/2b9a54453c1a3cbc651c0788ade94e4a?family=Noto+IKEA+Latin+Regular" rel="stylesheet">
         <link href="https://db.onlinewebfonts.com/c/b269e509d0e2d442240b8df6035c9999?family=Noto+IKEA+Latin+Bold" rel="stylesheet">
         <script src="https://kit.fontawesome.com/058e698f16.js" crossorigin="anonymous"></script>
@@ -59,19 +59,23 @@
                     })
                 }
                 document.getElementsByClassName("bi-2")[0].addEventListener("click", function() {
-                    if (!document.getElementById("video0").paused) {
+                    if (window.screen.width < 992) {
+                        if (!document.getElementById("video0").paused) {
                             document.getElementById("video0").pause()
                         } else {
                             document.getElementById("video0").play()
                         }
+                    }
                 })
 
                 document.getElementsByClassName("vc-rectangle")[0].addEventListener("click", function() {
-                    if (!document.getElementById("video1").paused) {
+                    if (window.screen.width < 992) {
+                        if (!document.getElementById("video1").paused) {
                             document.getElementById("video1").pause()
                         } else {
                             document.getElementById("video1").play()
                         }
+                    }
                 })
 
                 let el = document.getElementsByClassName("item-container")[0];
@@ -127,7 +131,7 @@
         <header>
             <div class="container header-main">
                 <div class="flex">
-                    <a href="index.html" class="flex"><img src="media/logo.svg" alt="IKEA" class="header-main__icon"></a>
+                    <a href="index.html" class="flex"><img src="svg/logo.svg" alt="IKEA" class="header-main__icon"></a>
                     <nav class="header-main__nav">
                         <ul class="header-main__ul">
                             <li class="ul__li__l-t-none"><a href="404.html" class="ul__a">Stories</a></li>
@@ -141,18 +145,18 @@
                 <div class="header-main__holder">
                     <a href="404.html">
                         <span>Go shopping: <b>IKEA International Sales</b></span>
-                        <img src="media/chevron.svg" alt="Chevron">
+                        <img src="svg/chevron.svg" alt="Chevron">
                     </a>
                     <hr>
                     <a href="404.html" class="holder__img-container">
-                        <img class="arrow arrow-header" src="media/arrow-right.svg" alt="Arrow Rigth">
+                        <img class="arrow arrow-header" src="svg/arrow-right.svg" alt="Arrow Rigth">
                     </a>
                 </div>
             </div>
         </header>
         <main class="container-m2 main">
             <a href="404.html" class="block__1 is_active" >
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>Explore a colourful home filled with creative storage solutions</span>
                     <h5 class="cbt__h5">Thinking beyond the (storage) box</h5>
@@ -161,12 +165,12 @@
             <div class="holder">
                 <a href="404.html" class="holder__header text-container">
                     <h5 class="holder__h5">Go shopping</h5>
-                    <img class="arrow arrow-main" src="media/arrow-right.svg" alt="Arrow Rigth">
+                    <img class="arrow arrow-main" src="svg/arrow-right.svg" alt="Arrow Rigth">
                 </a>
                 <hr class="holder__hr">
                 <a href="404.html" class="holder__footer text-container">
                     <span class="holder__span">Store: <b>IKEA International Sales</b></span>
-                    <img src="media/chevron.svg" alt="Chevron">
+                    <img src="svg/chevron.svg" alt="Chevron">
                 </a>
             </div>
             <a href="404.html" class="block__2 bi-1">
@@ -177,9 +181,9 @@
             </a>
             <div class="block__2 bi-2">
                 <video autoplay loop preload="auto" muted id="video0">
-                    <source src="media/video1.mp4">
+                    <source src="videos/video1.mp4">
                 </video>
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>Campaigns from around the IKEA world</span>
                     <h5 class="cbt__h5">Proudly second best</h5>
@@ -187,14 +191,14 @@
                 <button class="video-container__pause vc-right"><i class="fa-solid fa-pause fa-xl" style="color: #ffffff;"></i><i class="fa-solid fa-play fa-lg" style="color: #ffffff; display:none;"></i></button>
             </div>
             <a href="404.html" class="block__2 bi-3">
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>Family apartment in Sweden</span>
                     <h5 class="cbt__h5">Packed with personality</h5>
                 </div>
             </a>
             <a href="404.html" class="block__2 bi-4">
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>Designed with artist Daren Todd</span>
                     <h5 class="cbt__h5">A smart small space</h5>
@@ -208,7 +212,7 @@
                 </div>
                 <div class="video-container vc-rectangle">
                     <video autoplay loop preload="auto" muted id="video1">
-                        <source src="media/video2.mp4">
+                        <source src="videos/video2.mp4">
                     </video>
                     <button class="video-container__pause"><i class="fa-solid fa-pause fa-xl" style="color: #ffffff;"></i><i class="fa-solid fa-play fa-lg" style="color: #ffffff; display:none;"></i></button>
                 </div>
@@ -226,7 +230,7 @@
                 </div>
             </a>
             <a href="404.html" class="block__3 block__3-2">
-                <img src="media/block__13.avif" alt="Happy Woman" class="block-3__vc-square">
+                <img src="img/block__13.webp" alt="Happy Woman" class="block-3__vc-square">
                 <div class="create-better-text">
                     <span>Say hej and yum to...</span>
                     <h5 class="cbt__h5__modern">Our new<br>plant-based<br>hot dog</h5>
@@ -239,14 +243,14 @@
                 </div>
                 <div class="items">
                     <button class="slide s-left">
-                        <img src="media/chevron-w.svg" alt="Chevron">
+                        <img src="svg/chevron-w.svg" alt="Chevron">
                     </button>
                     <button class="slide s-right">
-                        <img src="media/chevron-w.svg" alt="Chevron">
+                        <img src="svg/chevron-w.svg" alt="Chevron">
                     </button>
                     <div class="items__container">
                         <a href="404.html" class="item-container" style="--m-left: 0px;">
-                            <img class="item-container__img" src="media/sell_1.avif" alt="FRÖSET chair">
+                            <img class="item-container__img" src="img/sell_1.webp" alt="FRÖSET chair">
                             <div class="item-container__div">
                                 <span class="item-container__span">Designed by Sarah Fager and
                                     Henrik Preutz</span>
@@ -254,28 +258,28 @@
                             </div>
                         </a>
                         <a href="404.html" class="item-container">
-                            <img class="item-container__img" src="media/sell_2.avif" alt="SYMFONISK lamp">
+                            <img class="item-container__img" src="img/sell_2.webp" alt="SYMFONISK lamp">
                             <div class="item-container__div">
                                 <span class="item-container__span">Designed by Iina Vuorivirta</span>
                                 <h6 class="item-container__h6">SYMFONISK lamp</h6>
                             </div>
                         </a>
                         <a href="404.html" class="item-container">
-                            <img class="item-container__img" src="media/sell_3.avif" alt="BURVIK table">
+                            <img class="item-container__img" src="img/sell_3.webp" alt="BURVIK table">
                             <div class="item-container__div">
                                 <span class="item-container__span">Designed by Mikael Axelsson</span>
                                 <h6 class="item-container__h6">BURVIK table</h6>
                             </div>
                         </a>
                         <a href="404.html" class="item-container">
-                            <img class="item-container__img" src="media/sell_4.avif" alt="RÖNNINGE chair">
+                            <img class="item-container__img" src="img/sell_4.webp" alt="RÖNNINGE chair">
                             <div class="item-container__div">
                                 <span class="item-container__span">Designed by Maja Ganszyniec</span>
                                 <h6 class="item-container__h6">RÖNNINGE chair</h6>
                             </div>
                         </a>
                         <a href="404.html" class="item-container">
-                            <img class="item-container__img" src="media/sell_5.avif" alt="BRÖNDEN rug">
+                            <img class="item-container__img" src="img/sell_5.webp" alt="BRÖNDEN rug">
                             <div class="item-container__div">
                                 <span class="item-container__span">Designed by Akanksha Deo</span>
                                 <h6 class="item-container__h6">BRÖNDEN rug</h6>
@@ -285,28 +289,28 @@
                 </div>
             </div>
             <a href="404.html" class="block__5 bi-9">
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>Country living</span>
                     <h5 class="cbt__h5">A visit to a Swedish farmhouse</h5>
                 </div>
             </a>
             <a href="404.html" class="block__2 bi-10">
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>IKEA Norway</span>
                     <h5 class="cbt__h5">The trash collection</h5>
                 </div>
             </a>
             <a href="404.html" class="block__2 bi-11">
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>Student life in Sweden</span>
                     <h5 class="cbt__h5">Starting small in the city</h5>
                 </div>
             </a>
             <a href="404.html" class="block__5 bi-12">
-                <img class="block__overlay" src="media/overlay.png" alt="Overlay">
+                <img class="block__overlay" src="img/overlay.png" alt="Overlay">
                 <div class="create-better-text">
                     <span>Making design dreams come true, one project at a time</span>
                     <h5 class="cbt__h5">The extra mile</h5>
@@ -315,8 +319,8 @@
         </main>
         <footer>
             <b><span class="footer__span">A world of inspiration for your home</span></b>
-            <img class="footer__logo" src="media/logo.svg" alt="IKEA">
-            <img class="footer__svg-image" src="media/footer-illustration.svg" alt="IKEA-Items">
+            <img class="footer__logo" src="svg/logo.svg" alt="IKEA">
+            <img class="footer__svg-image" src="svg/footer-illustration.svg" alt="IKEA-Items">
             <div class="footer__div">
                 <div class="footer__div-first-line">
                     <a href="404.html">International Sales</a>
