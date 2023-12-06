@@ -35,6 +35,7 @@ b {
 /* VALUES */
 
 .bi-1, .bi-2, .bi-3, .bi-4, .bi-5, .bi-6, .bi-7, .bi-8, .bi-9, .bi-10, .bi-11, .bi-12 {
+    background-position: center;
     background-size: cover;
 }
 
